@@ -25,6 +25,19 @@ function formatarData(data) {
     return `${dia}/${mes}/${ano}`;
 }
 
+// Função para calcular a idade em anos
+function calcularIdade(dataNascimento) {
+    if (!dataNascimento) return '';
+    const hoje = new Date('2025-05-03'); // Data atual fixa
+    const nascimento = new Date(dataNascimento);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const mesDiff = hoje.getMonth() - nascimento.getMonth();
+    if (mesDiff < 0 || (mesDiff === 0 && hoje.getDate() < nascimento.getDate())) {
+        idade--;
+    }
+    return idade >= 0 ? `${idade} anos` : '';
+}
+
 // Função para adicionar os emoticons como caracteres Unicode
 function adicionarEmoticon(resposta) {
     if (resposta === 'sim') return '\u2705'; // ✅
@@ -43,7 +56,8 @@ function enviarParaWhatsApp(event) {
     // Monta a mensagem com os emoticons como caracteres Unicode
     let mensagem = "=== Dados Pessoais ===\n";
     mensagem += `Nome: ${formData.get('nome') || ''}\n`;
-    mensagem += `Data de Nascimento: ${formatarData(formData.get('data-nascimento'))}\n`;
+    const dataNascimento = formData.get('data-nascimento');
+    mensagem += `Data de Nascimento: ${formatarData(dataNascimento)}${dataNascimento ? ` - ${calcularIdade(dataNascimento)}` : ''}\n`;
     mensagem += `CPF: ${formData.get('cpf') || ''}\n`;
     mensagem += `RG: ${formData.get('rg') || ''}\n`;
     mensagem += `Telefone: ${formData.get('telefone') || ''}\n`;

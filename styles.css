@@ -45,9 +45,17 @@ body {
     color: white;
 }
 
-.contact-info a {
+.contact-link {
     color: white;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-link .icon {
+    width: 20px;
+    height: 20px;
 }
 
 .section {
@@ -74,11 +82,12 @@ body {
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group textarea {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 8px;
     border: 1px solid #d86a7e;
     border-radius: 5px;
     font-size: 0.9em;
+    margin-right: 20px;
 }
 
 .form-group textarea {
@@ -107,11 +116,12 @@ body {
 }
 
 .signature input[type="text"] {
-    width: 100%;
+    width: calc(100% - 20px);
     padding: 8px;
     border: 1px solid #d86a7e;
     border-radius: 5px;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 button {
