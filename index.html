@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <div class="header">
-            FICHA DE AVALIAÇÃO - CONSULTORIA DE SKINCARE ONLINE
+            <img src="img/fotoperfil.jpg" alt="Foto de Perfil" class="profile-pic">
+            <span>FICHA DE AVALIAÇÃO - CONSULTORIA DE SKINCARE ONLINE</span>
         </div>
         <div class="contact-info">
             <span>📞 (013) 9917766125</span>
@@ -21,7 +22,7 @@
                 <h2>DADOS PESSOAIS</h2>
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome">
+                    <input type="text" id="nome" name="nome" oninput="atualizarAssinatura()">
                 </div>
                 <div class="form-group">
                     <label for="data-nascimento">Data de nascimento:</label>
@@ -50,11 +51,11 @@
                 <div class="form-group">
                     <label>Já fez alguma cirurgia?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="cirurgia-sim" name="cirurgia" value="sim" onclick="toggleField('cirurgia-sim', 'cirurgia-qual')">
+                        <input type="radio" id="cirurgia-sim" name="cirurgia" value="sim" onclick="toggleField('cirurgia-sim', 'cirurgia-qual')">
                         <label for="cirurgia-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="cirurgia-nao" name="cirurgia" value="nao" onclick="toggleField('cirurgia-sim', 'cirurgia-qual')">
+                        <input type="radio" id="cirurgia-nao" name="cirurgia" value="nao" onclick="toggleField('cirurgia-sim', 'cirurgia-qual')">
                         <label for="cirurgia-nao">Não</label>
                     </div>
                     <div id="cirurgia-qual-container" style="display: none;">
@@ -65,44 +66,44 @@
                 <div class="form-group">
                     <label>Está gestante?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="gestante-sim" name="gestante" value="sim">
+                        <input type="radio" id="gestante-sim" name="gestante" value="sim">
                         <label for="gestante-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="gestante-nao" name="gestante" value="nao">
+                        <input type="radio" id="gestante-nao" name="gestante" value="nao">
                         <label for="gestante-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Problemas no fígado ou rim?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="figado-rim-sim" name="figado-rim" value="sim">
+                        <input type="radio" id="figado-rim-sim" name="figado-rim" value="sim">
                         <label for="figado-rim-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="figado-rim-nao" name="figado-rim" value="nao">
+                        <input type="radio" id="figado-rim-nao" name="figado-rim" value="nao">
                         <label for="figado-rim-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Você é fumante?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="fumante-sim" name="fumante" value="sim">
+                        <input type="radio" id="fumante-sim" name="fumante" value="sim">
                         <label for="fumante-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="fumante-nao" name="fumante" value="nao">
+                        <input type="radio" id="fumante-nao" name="fumante" value="nao">
                         <label for="fumante-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Toma algum remédio?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="remedio-sim" name="remedio" value="sim" onclick="toggleField('remedio-sim', 'remedio-qual')">
+                        <input type="radio" id="remedio-sim" name="remedio" value="sim" onclick="toggleField('remedio-sim', 'remedio-qual')">
                         <label for="remedio-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="remedio-nao" name="remedio" value="nao" onclick="toggleField('remedio-sim', 'remedio-qual')">
+                        <input type="radio" id="remedio-nao" name="remedio" value="nao" onclick="toggleField('remedio-sim', 'remedio-qual')">
                         <label for="remedio-nao">Não</label>
                     </div>
                     <div id="remedio-qual-container" style="display: none;">
@@ -113,22 +114,22 @@
                 <div class="form-group">
                     <label>Já teve hepatite?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="hepatite-sim" name="hepatite" value="sim">
+                        <input type="radio" id="hepatite-sim" name="hepatite" value="sim">
                         <label for="hepatite-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="hepatite-nao" name="hepatite" value="nao">
+                        <input type="radio" id="hepatite-nao" name="hepatite" value="nao">
                         <label for="hepatite-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Toma anticoncepcional?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="anticoncepcional-sim" name="anticoncepcional" value="sim" onclick="toggleField('anticoncepcional-sim', 'anticoncepcional-qual')">
+                        <input type="radio" id="anticoncepcional-sim" name="anticoncepcional" value="sim" onclick="toggleField('anticoncepcional-sim', 'anticoncepcional-qual')">
                         <label for="anticoncepcional-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="anticoncepcional-nao" name="anticoncepcional" value="nao" onclick="toggleField('anticoncepcional-sim', 'anticoncepcional-qual')">
+                        <input type="radio" id="anticoncepcional-nao" name="anticoncepcional" value="nao" onclick="toggleField('anticoncepcional-sim', 'anticoncepcional-qual')">
                         <label for="anticoncepcional-nao">Não</label>
                     </div>
                     <div id="anticoncepcional-qual-container" style="display: none;">
@@ -139,22 +140,22 @@
                 <div class="form-group">
                     <label>Tem diabetes?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="diabetes-sim" name="diabetes" value="sim">
+                        <input type="radio" id="diabetes-sim" name="diabetes" value="sim">
                         <label for="diabetes-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="diabetes-nao" name="diabetes" value="nao">
+                        <input type="radio" id="diabetes-nao" name="diabetes" value="nao">
                         <label for="diabetes-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Alergia a medicamento?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="alergia-sim" name="alergia" value="sim" onclick="toggleField('alergia-sim', 'alergia-qual')">
+                        <input type="radio" id="alergia-sim" name="alergia" value="sim" onclick="toggleField('alergia-sim', 'alergia-qual')">
                         <label for="alergia-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="alergia-nao" name="alergia" value="nao" onclick="toggleField('alergia-sim', 'alergia-qual')">
+                        <input type="radio" id="alergia-nao" name="alergia" value="nao" onclick="toggleField('alergia-sim', 'alergia-qual')">
                         <label for="alergia-nao">Não</label>
                     </div>
                     <div id="alergia-qual-container" style="display: none;">
@@ -165,22 +166,22 @@
                 <div class="form-group">
                     <label>Tem asma?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="asma-sim" name="asma" value="sim">
+                        <input type="radio" id="asma-sim" name="asma" value="sim">
                         <label for="asma-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="asma-nao" name="asma" value="nao">
+                        <input type="radio" id="asma-nao" name="asma" value="nao">
                         <label for="asma-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Sabe qual é a sua pressão?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="pressao-sim" name="pressao" value="sim" onclick="toggleField('pressao-sim', 'pressao-qual')">
+                        <input type="radio" id="pressao-sim" name="pressao" value="sim" onclick="toggleField('pressao-sim', 'pressao-qual')">
                         <label for="pressao-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="pressao-nao" name="pressao" value="nao" onclick="toggleField('pressao-sim', 'pressao-qual')">
+                        <input type="radio" id="pressao-nao" name="pressao" value="nao" onclick="toggleField('pressao-sim', 'pressao-qual')">
                         <label for="pressao-nao">Não</label>
                     </div>
                     <div id="pressao-qual-container" style="display: none;">
@@ -191,22 +192,22 @@
                 <div class="form-group">
                     <label>Tem problema cardíaco?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="cardiaco-sim" name="cardiaco" value="sim">
+                        <input type="radio" id="cardiaco-sim" name="cardiaco" value="sim">
                         <label for="cardiaco-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="cardiaco-nao" name="cardiaco" value="nao">
+                        <input type="radio" id="cardiaco-nao" name="cardiaco" value="nao">
                         <label for="cardiaco-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Faz tratamento médico?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="tratamento-sim" name="tratamento" value="sim" onclick="toggleField('tratamento-sim', 'tratamento-qual')">
+                        <input type="radio" id="tratamento-sim" name="tratamento" value="sim" onclick="toggleField('tratamento-sim', 'tratamento-qual')">
                         <label for="tratamento-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="tratamento-nao" name="tratamento" value="nao" onclick="toggleField('tratamento-sim', 'tratamento-qual')">
+                        <input type="radio" id="tratamento-nao" name="tratamento" value="nao" onclick="toggleField('tratamento-sim', 'tratamento-qual')">
                         <label for="tratamento-nao">Não</label>
                     </div>
                     <div id="tratamento-qual-container" style="display: none;">
@@ -217,33 +218,33 @@
                 <div class="form-group">
                     <label>Já teve convulsão?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="convulsao-sim" name="convulsao" value="sim">
+                        <input type="radio" id="convulsao-sim" name="convulsao" value="sim">
                         <label for="convulsao-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="convulsao-nao" name="convulsao" value="nao">
+                        <input type="radio" id="convulsao-nao" name="convulsao" value="nao">
                         <label for="convulsao-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Tem problema renal?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="renal-sim" name="renal" value="sim">
+                        <input type="radio" id="renal-sim" name="renal" value="sim">
                         <label for="renal-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="renal-nao" name="renal" value="nao">
+                        <input type="radio" id="renal-nao" name="renal" value="nao">
                         <label for="renal-nao">Não</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Costuma sentir tontura?</label>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="tontura-sim" name="tontura" value="sim">
+                        <input type="radio" id="tontura-sim" name="tontura" value="sim">
                         <label for="tontura-sim">Sim</label>
                     </div>
                     <div class="checkbox-group">
-                        <input type="checkbox" id="tontura-nao" name="tontura" value="nao">
+                        <input type="radio" id="tontura-nao" name="tontura" value="nao">
                         <label for="tontura-nao">Não</label>
                     </div>
                 </div>
@@ -274,7 +275,7 @@
                 <div class="signature">
                     <p>Eu me responsabilizo por todas as informações aqui prestadas e autorizo o procedimento.</p>
                     <label for="assinatura">Assinatura:</label>
-                    <input type="text" id="assinatura" name="assinatura">
+                    <input type="text" id="assinatura" name="assinatura" readonly>
                 </div>
             </div>
 
@@ -282,72 +283,6 @@
         </form>
     </div>
 
-    <script>
-        // Função para mostrar/esconder os campos "Se sim, qual?"
-        function toggleField(checkboxId, fieldId) {
-            const checkbox = document.getElementById(checkboxId);
-            const fieldContainer = document.getElementById(`${fieldId}-container`);
-            fieldContainer.style.display = checkbox.checked ? 'block' : 'none';
-        }
-
-        // Função para enviar os dados para o WhatsApp
-        function enviarParaWhatsApp(event) {
-            event.preventDefault(); // Impede o comportamento padrão do formulário
-
-            // Coleta os dados do formulário
-            const form = document.getElementById('form-avaliacao');
-            const formData = new FormData(form);
-
-            // Monta a mensagem
-            let mensagem = "=== Dados Pessoais ===\n";
-            mensagem += `Nome: ${formData.get('nome') || ''}\n`;
-            mensagem += `Data de Nascimento: ${formData.get('data-nascimento') || ''}\n`;
-            mensagem += `CPF: ${formData.get('cpf') || ''}\n`;
-            mensagem += `RG: ${formData.get('rg') || ''}\n`;
-            mensagem += `Telefone: ${formData.get('telefone') || ''}\n`;
-            mensagem += `Endereço: ${formData.get('endereco') || ''}\n\n`;
-
-            mensagem += "=== Histórico de Saúde ===\n";
-            mensagem += `Já fez alguma cirurgia? ${formData.get('cirurgia') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('cirurgia-qual') || ''}\n`;
-            mensagem += `Está gestante? ${formData.get('gestante') || ''}\n`;
-            mensagem += `Problemas no fígado ou rim? ${formData.get('figado-rim') || ''}\n`;
-            mensagem += `Você é fumante? ${formData.get('fumante') || ''}\n`;
-            mensagem += `Toma algum remédio? ${formData.get('remedio') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('remedio-qual') || ''}\n`;
-            mensagem += `Já teve hepatite? ${formData.get('hepatite') || ''}\n`;
-            mensagem += `Toma anticoncepcional? ${formData.get('anticoncepcional') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('anticoncepcional-qual') || ''}\n`;
-            mensagem += `Tem diabetes? ${formData.get('diabetes') || ''}\n`;
-            mensagem += `Alergia a medicamento? ${formData.get('alergia') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('alergia-qual') || ''}\n`;
-            mensagem += `Tem asma? ${formData.get('asma') || ''}\n`;
-            mensagem += `Sabe qual é a sua pressão? ${formData.get('pressao') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('pressao-qual') || ''}\n`;
-            mensagem += `Tem problema cardíaco? ${formData.get('cardiaco') || ''}\n`;
-            mensagem += `Faz tratamento médico? ${formData.get('tratamento') || ''}\n`;
-            mensagem += `Se sim, qual? ${formData.get('tratamento-qual') || ''}\n`;
-            mensagem += `Já teve convulsão? ${formData.get('convulsao') || ''}\n`;
-            mensagem += `Tem problema renal? ${formData.get('renal') || ''}\n`;
-            mensagem += `Costuma sentir tontura? ${formData.get('tontura') || ''}\n`;
-            mensagem += `Como é a sua pele normalmente? ${formData.get('pele') || ''}\n`;
-            mensagem += `Objetivo do tratamento: ${formData.get('objetivo') || ''}\n`;
-            mensagem += `Como é a sua alimentação? ${formData.get('alimentacao') || ''}\n`;
-            mensagem += `Como é a sua rotina? ${formData.get('rotina') || ''}\n\n`;
-
-            mensagem += "=== Termo de Compromisso ===\n";
-            mensagem += `Data: ${formData.get('data') || ''}\n`;
-            mensagem += `Assinatura: ${formData.get('assinatura') || ''}\n`;
-
-            // Codifica a mensagem para URL
-            const mensagemCodificada = encodeURIComponent(mensagem);
-
-            // Link do WhatsApp ajustado conforme solicitado
-            const urlWhatsApp = `https://wa.me/5513991766125?text=${mensagemCodificada}`;
-
-            // Abre o WhatsApp
-            window.open(urlWhatsApp, '_blank');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
